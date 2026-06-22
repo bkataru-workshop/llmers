@@ -1,0 +1,13 @@
+[package]
+name = "llm"
+version = "1.0.0"
+edition = "2021"
+license = "Apache-2.0"
+description = "CLI frontend for the llmers library"
+
+[[bin]]
+name = "llm"
+path = "src/main.rs"
+
+[dependencies]
+llmers = { path = "../llmers" }

@@ -1,0 +1,9 @@
+[package]
+name = "llmers"
+version = "1.0.0"
+edition = "2021"
+license = "Apache-2.0"
+description = "Unified LLM client library in pure Rust with no async runtime (inspired by llm.h)"
+
+[dependencies]
+ureq = { version = "2", default-features = false, features = ["tls"] }
