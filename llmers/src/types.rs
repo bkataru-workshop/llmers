@@ -217,3 +217,45 @@ impl Default for LlmClient {
         }
     }
 }
+
+impl Default for LlmRequest {
+    fn default() -> Self {
+        Self {
+            messages: Vec::new(),
+            model: None,
+            max_tokens: LLM_DEFAULT_MAX_TOKENS,
+            temperature: LLM_DEFAULT_TEMPERATURE,
+            top_p: 1.0,
+            frequency_penalty: 0.0,
+            presence_penalty: 0.0,
+            top_k: 0,
+            stop: Vec::new(),
+            stream: false,
+            stream_callback: None,
+            tools: Vec::new(),
+            tool_choice: None,
+            system: None,
+            min_p: 0.0,
+            json_mode: false,
+            json_schema: None,
+            seed: None,
+        }
+    }
+}
+
+impl Default for LlmResponse {
+    fn default() -> Self {
+        Self {
+            id: None,
+            model: None,
+            content: None,
+            tool_calls: Vec::new(),
+            finish_reason: LlmFinishReason::Unknown,
+            usage: LlmUsage::default(),
+            stats: LlmStats::default(),
+            error: LlmError::Ok,
+            error_message: None,
+            http_status: 0,
+        }
+    }
+}
